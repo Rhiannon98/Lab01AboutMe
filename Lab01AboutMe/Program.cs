@@ -7,38 +7,30 @@ namespace Lab01AboutMe
         static void Main(string[] args)
         {
             FavColor();
-            /*SingleChildBoolean();
-              NumOfDogs(); */
+            SingleChildBoolean();
+            NumOfDogs();
         }
 
         static string FavColor()
         {
             // ask user first question in console.
-            Console.WriteLine("what is my favorite color?");
+            Console.WriteLine("What is my favorite color?");
             // read what the user input
-            string colorString = Console.ReadLine();
-            string[] favColorStrings = new string[3];
-            favColorStrings[0] = "black";
-            favColorStrings[1] = "blue";
-            favColorStrings[2] = "purple";
+            string color = Console.ReadLine();
 
-            if (colorString == favColorStrings[0] || colorString == favColorStrings[1] ||
-                colorString == favColorStrings[3])
-            {
-                Console.WriteLine("correct! i have three actually; blue, black and purple");
-            }
-            else
-            {
-                Console.WriteLine("WRONG!");
-            }
-
-            return "did you try?";
+            // if conditional
+            // 
+            // will return 'is correct' if one of three colors
+            // else 
+            // will return 'is wrong' if not one of the above three
+            return "";
         }
 
         static bool SingleChildBoolean()
         {
-            Console.WriteLine("do i have siblings? true/false, ONLY.");
+            Console.WriteLine("Do I have siblings? True or False, ONLY.");
             // read user input
+
             // if conditional
             // if true return true response
             // else
@@ -48,7 +40,7 @@ namespace Lab01AboutMe
 
         static string NumOfDogs()
         {
-            Console.WriteLine("do i have dogs?");
+            Console.WriteLine("Do I have dogs?");
             // read user input
 
             // if yes
