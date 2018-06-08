@@ -1,22 +1,24 @@
 ﻿using System;
+using static System.Console;
 
 namespace Lab01AboutMe
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            WriteLine("Hello World!");
             FavColor();
-            /*SingleChildBoolean();
-              NumOfDogs(); */
+            SingleChildBoolean();
+            NumOfDogs(); 
         }
 
-        static string FavColor()
+        public static string FavColor()
         {
             // ask user first question in console.
-            Console.WriteLine("what is my favorite color?");
+            WriteLine("what is my favorite color?");
             // read what the user input
-            string colorString = Console.ReadLine();
+            string colorString = ReadLine();
             string[] favColorStrings = new string[3];
             favColorStrings[0] = "black";
             favColorStrings[1] = "blue";
@@ -25,38 +27,79 @@ namespace Lab01AboutMe
             if (colorString == favColorStrings[0] || colorString == favColorStrings[1] ||
                 colorString == favColorStrings[3])
             {
-                Console.WriteLine("correct! i have three actually; blue, black and purple");
+                WriteLine("correct! i have three actually; blue, black and purple");
+                Clear();
+            }
+            if (colorString != favColorStrings[0] || colorString != favColorStrings[1] || colorString != favColorStrings[2])
+            {
+                WriteLine("incorrect, my favorite colors are blue, black and purple!");
+                Clear();
+                return "moving on..";
+            }
+
+            return "good guesses :)";
+        }
+
+        public static void SingleChildBoolean()
+        {
+            WriteLine("do i have siblings? true/false, ONLY.");
+            // read user input
+            string userBool = ReadLine();
+            // if conditional
+            // if true return true response
+            if (userBool == "true")
+            {
+                WriteLine("truth! i have one biological sister.");
+                Clear();
             }
             else
             {
-                Console.WriteLine("WRONG!");
+                WriteLine("nope, i actually have a sister!");
+                Clear();
             }
-
-            return "did you try?";
         }
 
-        static bool SingleChildBoolean()
+        public static void NumOfDogs()
         {
-            Console.WriteLine("do i have siblings? true/false, ONLY.");
+            WriteLine("do i have dogs? yes or no.");
             // read user input
-            // if conditional
-            // if true return true response
-            // else
-            // if false return false response
-            return false;
-        }
+            string userGuess = ReadLine();
 
-        static string NumOfDogs()
-        {
-            Console.WriteLine("do i have dogs?");
-            // read user input
+            if (userGuess.ToLower() == "yes")
+            {
+                WriteLine("correct! i have two dogs right now :)");
+                WriteLine("how large do you think was my largest pack?");
+                int userGuess2 = Convert.ToInt32(ReadLine());
 
-            // if yes
-            // return great!
-            // how large do you think my pack got?
-            // else
-            // return oooh too bad, the answer is a definite yes
-            return "";
+                if (userGuess2 == 5)
+                {
+                    WriteLine("yes! my family loves dogs :)");
+                }
+                if (userGuess2 < 5)
+                {
+                    WriteLine("oooh, too low. My largest was 5 pups in the pack at once!");
+                }
+
+                if (userGuess2 > 5)
+                {
+                    WriteLine("whoa there! im not THAT insane, its a kinda sensible number");
+                }
+                else
+                {
+                    WriteLine("its alright, this was optional :)");
+                    Clear();
+                    return;
+                }
+
+                Clear();
+            }
+            if (userGuess.ToLower() == "no")
+            {
+                WriteLine("incorrect, i do have two dogs right now.");
+                Clear();
+            }
+            WriteLine("thats the end, hope you had some fun at least in this simple game.");
+            Clear();
         }
     }
 }
